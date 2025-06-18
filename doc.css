@@ -1,0 +1,202 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #0056b3;
+    --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    --btn-radius: 30px;
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: var(--font-family);
+    background: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+.main-menu {
+    background: var(--primary-color);
+    padding: 10px 0;
+}
+
+.main-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main-menu ul li {
+    margin: 0 15px;
+}
+
+.main-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-speed);
+}
+
+.main-menu ul li a:hover,
+.main-menu ul li a.active {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Doctors Section */
+.doctors-section {
+    padding: 60px 15px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Search Filters */
+.filter-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.filter-card .form-label {
+    font-weight: 600;
+}
+
+.filter-card .form-select {
+    border-radius: var(--btn-radius);
+}
+
+/* Doctors Listing */
+#doctorsList {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.doctor-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: transform var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+}
+
+.doctor-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--primary-color);
+}
+
+.doctor-card h5 {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.doctor-specialization {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.doctor-location {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.book-btn {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--btn-radius);
+    padding: 10px 20px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+    width: 100%;
+}
+
+.book-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Appointment Modal */
+.modal-header {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-body .form-label {
+    font-weight: 600;
+}
+
+.modal-body .form-control {
+    border-radius: var(--btn-radius);
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--btn-radius);
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: background-color var(--transition-speed);
+    display: inline-block;
+    width: 100%;
+    max-width: 350px;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    #doctorsList {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .doctor-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+

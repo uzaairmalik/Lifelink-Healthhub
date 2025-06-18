@@ -1,0 +1,352 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #0056b3;
+  --dark-overlay: rgba(0, 0, 0, 0.6);
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --btn-radius: 30px;
+  --transition-speed: 0.3s;
+  --text-muted: #6c757d;
+}
+
+body {
+  font-family: var(--font-family);
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.header {
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.logo img {
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+.main-menu ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+.main-menu li {
+    margin-left: 10px;
+}
+.main-menu ul li a {
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+  /* padding: 10px 15px; */
+  border-radius: 20px;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.main-menu ul li a:hover,
+.main-menu ul li a.active {
+  background-color: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* Page Banner */
+.page-banner {
+  padding: 100px 0;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(var(--dark-overlay), var(--dark-overlay)),
+    url('../img/medicine-bg.jpg') no-repeat center center/cover;
+}
+
+.page-banner h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 0.3rem;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.page-banner p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Medicines Content */
+.medicines-content {
+  padding: 60px 0;
+}
+
+.program-description h2,
+.medicine-list h2,
+.testimonials h2,
+.faq h2 {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 10px;
+}
+
+.program-description p {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  color: #444;
+}
+
+.eligibility ul,
+.available-medicines ul {
+  list-style: disc inside;
+  padding-left: 0;
+  color: #444;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.application-process ol {
+  padding-left: 20px;
+  color: #444;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Sidebar */
+.medicines-sidebar {
+  position: sticky;
+  top: 90px;
+}
+
+.available-medicines,
+.donation-info {
+  background: #fff;
+  padding: 20px 25px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.15);
+}
+
+.available-medicines h3,
+.donation-info h3 {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 8px;
+}
+
+.available-medicines ul li {
+  padding: 6px 0;
+}
+
+.donation-info p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.donation-info .btn {
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: var(--btn-radius);
+  font-weight: 600;
+  padding: 10px 25px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.donation-info .btn:hover {
+  background: var(--secondary-color);
+  box-shadow: 0 0 15px var(--secondary-color);
+}
+
+/* Medicine List Table */
+.medicine-list .table {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,123,255,0.15);
+  margin-bottom: 15px;
+}
+
+.medicine-list table th,
+.medicine-list table td {
+  vertical-align: middle;
+  text-align: center;
+  font-size: 1rem;
+  padding: 12px 15px;
+  border-top: none;
+}
+
+.medicine-list table thead th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+}
+
+.medicine-list p.text-center {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+/* Testimonials */
+.testimonials {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.testimonials .testimonial-item {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.15);
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+.testimonials .testimonial-item:hover {
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+}
+
+.testimonials p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.testimonials strong {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* FAQ Section */
+.faq {
+  margin-bottom: 60px;
+}
+
+.faq .faq-item {
+  background: #fff;
+  padding: 15px 25px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.faq .faq-item:hover {
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+}
+
+.faq h4 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+.faq p {
+  font-size: 1rem;
+  color: #444;
+  margin: 0;
+}
+
+/* Footer */
+.footer {
+  background: #222;
+  color: #ccc;
+  padding: 40px 0 20px;
+  font-size: 0.95rem;
+}
+
+.footer-widget {
+  margin-bottom: 30px;
+}
+
+.footer-logo {
+  height: 50px;
+  margin-bottom: 15px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-widget p,
+.footer-widget ul,
+.footer-widget li,
+.footer-widget a,
+.footer-widget h3 {
+  color: #ccc;
+}
+
+.footer-widget ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-widget ul li {
+  margin-bottom: 8px;
+}
+
+.footer-widget ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-widget ul li a:hover {
+  color: var(--primary-color);
+}
+
+.footer-widget h3 {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.social-links a {
+  color: #ccc;
+  margin-right: 15px;
+  font-size: 1.3rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--primary-color);
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .medicines-sidebar {
+    position: static;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-menu ul {
+    flex-direction: column;
+  }
+}
+
