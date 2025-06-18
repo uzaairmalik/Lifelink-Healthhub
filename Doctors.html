@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeLinkHealthHub - Doctors</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/doc.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+     <nav class="main-menu">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a  href="firstAid.html">FirstAid</a></li>
+                            <li><a href="bloodGroups.html">BloodGroups</a></li>
+                            <li><a href="free-Medicines.html">Medicines</a></li>
+                            <li><a class="active" href="Doctors.html">Doctors</a></li>
+                            <li><a href="SymptomsChecker.html">SymptomsChecker</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="welfare.html" >WelfareServices</a></li>
+                        </ul>
+                    </nav>
+    
+            <!-- <a class="navbar-brand" href="index.html">
+                <i class="fas fa-heartbeat me-2"></i>LifeLinkHealthHub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blood.html">Blood</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="doctors.html">Doctors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="medicines.html">Medicines</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+
+    <!-- Doctors Main Section -->
+    <section class="doctors-section py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-8 mx-auto text-center">
+                    <h2 class="section-title">Find Qualified Doctors</h2>
+                    <p class="section-subtitle">Book appointments with certified medical professionals</p>
+                </div>
+            </div>
+
+            <!-- Search Filters -->
+            <div class="row mb-5">
+                <div class="col-md-10 mx-auto">
+                    <div class="card filter-card">
+                        <div class="card-body">
+                            <form id="doctorSearchForm">
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <label class="form-label">Specialization</label>
+                                        <select class="form-select" id="specialization">
+                                            <option value="">All Specialties</option>
+                                            <option value="Cardiology">Cardiology</option>
+                                            <option value="Dermatology">Dermatology</option>
+                                            <option value="Pediatrics">Pediatrics</option>
+                                            <option value="Neurology">Neurology</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label">Location</label>
+                                        <select class="form-select" id="location">
+                                            <option value="">All Locations</option>
+                                            <option value="Islamabad">Islamabad</option>
+                                            <option value="Karachi">Karachi</option>
+                                            <option value="Lahore">Lahore</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 d-flex align-items-end">
+                                        <button type="submit" class="btn btn-primary w-100">
+                                            <i class="fas fa-search me-2"></i>Search
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctors Listing -->
+            <div class="row" id="doctorsList">
+                <!-- Dynamic content will be inserted here by JavaScript -->
+            </div>
+
+            <!-- Appointment Modal -->
+            <div class="modal fade" id="appointmentModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Book Appointment</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="appointmentForm">
+                                <input type="hidden" id="doctorId">
+                                <div class="mb-3">
+                                    <label class="form-label">Patient Name</label>
+                                    <input type="text" class="form-control" id="patientName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Contact Number</label>
+                                    <input type="tel" class="form-control" id="contactNumber" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Appointment Date</label>
+                                    <input type="date" class="form-control" id="appointmentDate" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Preferred Time</label>
+                                    <select class="form-select" id="appointmentTime" required>
+                                        <option value="">Select Time</option>
+                                        <option value="09:00 AM">09:00 AM</option>
+                                        <option value="11:00 AM">11:00 AM</option>
+                                        <option value="02:00 PM">02:00 PM</option>
+                                        <option value="04:00 PM">04:00 PM</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/doctors.js"></script>
+</body>
+</html>
