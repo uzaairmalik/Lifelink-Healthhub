@@ -1,0 +1,219 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #0056b3;
+    --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    --btn-radius: 30px;
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: var(--font-family);
+    background: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.header {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.main-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main-menu ul li {
+    margin-left: 20px;
+}
+
+.main-menu ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-speed);
+}
+
+.main-menu ul li a:hover,
+.main-menu ul li a.active {
+    color: var(--primary-color);
+}
+
+/* Symptom Checker Section */
+.symptom-checker {
+    padding: 60px 15px;
+}
+
+.checker-container {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.checker-container h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.checker-form .form-group {
+    margin-bottom: 20px;
+}
+
+.checker-form label {
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--btn-radius);
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: background-color var(--transition-speed);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Results Container */
+.results-container {
+    margin-top: 30px;
+}
+
+.results-section {
+    margin-bottom: 20px;
+}
+
+.results-section h4 {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.results-section .condition-list,
+.results-section .action-list,
+.results-section .help-list,
+.results-section .care-list {
+    margin-top: 10px;
+}
+
+.results-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.loading-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Footer */
+.footer {
+    background: #222;
+    color: #ccc;
+    padding: 40px 15px 20px;
+    font-size: 0.95rem;
+}
+
+.footer-widget {
+    margin-bottom: 30px;
+}
+
+.footer-logo {
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.footer-widget p,
+.footer-widget ul,
+.footer-widget li,
+.footer-widget a,
+.footer-widget h3 {
+    color: #ccc;
+}
+
+.footer-widget ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-widget ul li {
+    margin-bottom: 8px;
+}
+
+.footer-widget ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-widget ul li a:hover {
+    color: var(--primary-color);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid #444;
+    padding-top: 15px;
+    color: #666;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .checker-container {
+        padding: 20px;
+    }
+
+    .checker-container h2 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+}
+/* SympChe.css - Symptom Checker page */
+@import url('style.css');
+
+.symptom-checker {
+  padding: 60px 0;
+}
+
+.checker-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.results-container {
+  margin-top: 30px;
+}
+
+.results-section {
+  margin-bottom: 25px;
+}
+
+.disclaimer {
+  background-color: #fff8e1;
+  padding: 15px;
+  border-left: 4px solid #ffc107;
+}

@@ -1,0 +1,316 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #0056b3;
+  --dark-overlay: rgba(0, 0, 0, 0.6);
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --btn-radius: 30px;
+  --transition-speed: 0.3s;
+  --text-muted: #6c757d;
+}
+
+body {
+  font-family: var(--font-family);
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.header {
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.logo img {
+  height: 50px;
+  transition: transform var(--transition-speed) ease;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+.main-menu ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+.main-menu li {
+    margin-left: 10px;
+}
+
+.main-menu ul li a {
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+  /* padding: 10px 15px; */
+  border-radius: 20px;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.main-menu ul li a:hover,
+.main-menu ul li a.active {
+  background-color: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* Page Banner */
+.page-banner {
+  padding: 120px 0;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(var(--dark-overlay), var(--dark-overlay)),
+               url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+}
+
+.page-banner h1 {
+  font-weight: 700;
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
+
+.page-banner p {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+}
+
+/* Content Section */
+.blood-groups-content {
+  padding: 60px 15px;
+}
+
+h2, h3 {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 8px;
+}
+
+.blood-intro p,
+.donation-process p,
+.donation-benefits p,
+.cta-content p,
+.important-facts ul {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  color: #444;
+}
+
+.blood-intro p {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Table Styling */
+.table {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,123,255,0.15);
+  margin-bottom: 40px;
+}
+
+.table th,
+.table td {
+  vertical-align: middle !important;
+  text-align: center;
+  font-size: 1rem;
+  padding: 15px;
+  border-top: none !important;
+}
+
+.table thead th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+}
+
+/* Lists */
+.donation-process ol {
+  padding-left: 20px;
+  color: #444;
+  font-size: 1rem;
+}
+
+.donation-process ol li {
+  padding: 8px 0;
+}
+
+.donation-benefits ul {
+  list-style: disc;
+  padding-left: 20px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.donation-benefits ul li {
+  padding: 6px 0;
+}
+
+.important-facts ul {
+  list-style: disc;
+  padding-left: 20px;
+  color: #444;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.important-facts ul li {
+  padding: 6px 0;
+}
+
+/* Blood Donation CTA */
+.blood-donation-cta {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 50px 15px;
+  text-align: center;
+}
+
+.blood-donation-cta h2 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.blood-donation-cta p {
+  font-size: 1.3rem;
+  margin-bottom: 35px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blood-donation-cta .btn {
+  margin: 0 10px 10px;
+  font-size: 1.25rem;
+  padding: 12px 36px;
+  border-radius: 30px;
+  font-weight: 700;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  min-width: 180px;
+}
+
+.blood-donation-cta .btn:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+.btn-outline-light {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-outline-light:hover {
+  background-color: #fff;
+  color: var(--primary-color);
+  border-color: #fff;
+}
+
+/* Footer */
+.footer {
+  background: #222;
+  color: #ccc;
+  padding: 40px 0 20px;
+  font-size: 0.95rem;
+}
+
+.footer-widget {
+  margin-bottom: 30px;
+}
+
+.footer-logo {
+  height: 50px;
+  margin-bottom: 15px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-widget p,
+.footer-widget ul,
+.footer-widget li,
+.footer-widget a,
+.footer-widget h3 {
+  color: #ccc;
+}
+
+.footer-widget ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-widget ul li {
+  margin-bottom: 8px;
+}
+
+.footer-widget ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-widget ul li a:hover {
+  color: var(--primary-color);
+}
+
+.footer-widget h3 {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.social-links a {
+  color: #ccc;
+  margin-right: 15px;
+  font-size: 1.3rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--primary-color);
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .blood-donation-cta h2 {
+    font-size: 2rem;
+  }
+  .blood-donation-cta p {
+    font-size: 1rem;
+  }
+  .blood-donation-cta .btn {
+    font-size: 1rem;
+    padding: 10px 24px;
+    min-width: auto;
+    margin: 10px 5px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-menu ul {
+    flex-direction: column;
+  }
+}

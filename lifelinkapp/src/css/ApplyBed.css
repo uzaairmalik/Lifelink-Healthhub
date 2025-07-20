@@ -1,0 +1,24 @@
+.apply-bed-container {
+  min-height: calc(100vh - 200px);
+}
+
+.success-card {
+  max-width: 600px;
+  margin: 0 auto;
+  border: none;
+}
+
+.success-icon {
+  font-size: 5rem;
+  color: #28a745;
+  margin-bottom: 1.5rem;
+}
+
+.card-header {
+  padding: 1.5rem;
+}
+
+.form-control:disabled, .form-select:disabled {
+  background-color: #f8f9fa;
+  opacity: 1;
+}
