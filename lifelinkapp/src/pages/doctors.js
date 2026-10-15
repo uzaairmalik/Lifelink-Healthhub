@@ -132,6 +132,7 @@ const Doctors = () => {
     setDoctors(sampleDoctors);
     setFilteredDoctors(sampleDoctors);
     setLoading(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Search and filter functionality
