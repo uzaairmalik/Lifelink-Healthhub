@@ -52,6 +52,6 @@
     "react-refresh": "^0.17.0"
   },
   "engines": {
-    "node": "18 || 20"
+    "node": "24.x"
   }
 }
