@@ -1,28 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { whatsappLink } from '../config';
 import '../css/style.css';
 
 const Doctors = () => {
-  // Sample doctor data with remote images
+  // SAMPLE DATA: these doctor profiles are placeholders so the directory UI
+  // can be previewed. Replace this array with real clinic data before
+  // presenting the site to patients.
   const sampleDoctors = [
     {
       id: 1,
-      name: "Dr. Sarah ",
+      name: "Dr. Sarah",
       specialization: "Cardiology",
       location: "Islamabad",
       rating: 4.9,
       experience: "12 years",
-      image: "./img/img2.jpg",
+      image: "/img/img2.webp",
       bio: "Board-certified cardiologist specializing in preventive care and heart disease management."
     },
     {
       id: 2,
       name: "Dr. Ali",
       specialization: "Neurology",
-      location: "Rawal Pindi",
+      location: "Rawalpindi",
       rating: 4.7,
       experience: "8 years",
-      image: "./img/dr.Usman.jpg",
+      image: "/img/dr-usman.avif",
       bio: "Neurology specialist with expertise in migraine treatment and cognitive disorders."
     },
     {
@@ -32,7 +35,7 @@ const Doctors = () => {
       location: "Chicago",
       rating: 4.8,
       experience: "10 years",
-      image: "./img/im1.jpg",
+      image: "/img/im1.webp",
       bio: "Pediatrician dedicated to providing compassionate care for children of all ages."
     },
     {
@@ -42,7 +45,7 @@ const Doctors = () => {
       location: "Abbottabad",
       rating: 4.6,
       experience: "15 years",
-      image: "./img/jp3.jpg",
+      image: "/img/jp3.webp",
       bio: "Orthopedic surgeon specializing in sports injuries and joint replacements."
     },
     {
@@ -62,37 +65,37 @@ const Doctors = () => {
       location: "Peshawar",
       rating: 4.7,
       experience: "9 years",
-      image: "./img/jp5.jpg",
+      image: "/img/jp5.webp",
       bio: "Primary care physician providing comprehensive health services for adults."
     },
     {
       id: 7,
       name: "Dr. Fatima Ahmed",
       specialization: "Obstetrics & Gynecology",
-      location: "lahore",
+      location: "Lahore",
       rating: 4.8,
       experience: "11 years",
-      image: "./img/woman-doctor-wearing-lab-coat-with-stethoscope-isolated.jpg",
+      image: "/img/woman-doctor-wearing-lab-coat-with-stethoscope-isolated.webp",
       bio: "OB/GYN providing compassionate care for women at all stages of life."
     },
     {
       id: 8,
-      name: "Dr. rabia sultan",
+      name: "Dr. Rabia Sultan",
       specialization: "Gynecology",
-      location: "lahore",
+      location: "Lahore",
       rating: 4.8,
       experience: "11 years",
-      image: "./img/woman-doctor-wearing-lab-coat-with-stethoscope-isolated.jpg",
+      image: "/img/woman-doctor-wearing-lab-coat-with-stethoscope-isolated.webp",
       bio: "OB/GYN providing compassionate care for women at all stages of life."
     },
     {
       id: 9,
       name: "Dr. Aisha",
       specialization: "Psychiatry",
-      location: "faislabad",
+      location: "Faisalabad",
       rating: 4.5,
       experience: "14 years",
-      image: "./img/jp3.jpg",
+      image: "/img/jp3.webp",
       bio: "Psychiatrist specializing in anxiety, depression, and mood disorders."
     }
   ];
@@ -154,16 +157,25 @@ const Doctors = () => {
     setFilteredDoctors(doctors);
   };
 
-  // Appointment booking
-  const handleAppointmentSubmit = async (e) => {
+  // Appointment booking. No backend is deployed for this site, so a validated
+  // request is handed to WhatsApp when a clinic number is configured. When it
+  // isn't, we say so honestly instead of faking a "booked" confirmation.
+  const handleAppointmentSubmit = (e) => {
     e.preventDefault();
     setBookingStatus({ loading: true, error: null });
-    
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Reset form and close modal on success
+
+    const text =
+      `New appointment request — LifeLink HealthHub website\n` +
+      `Doctor: ${selectedDoctor.name} (${selectedDoctor.specialization})\n` +
+      `Patient: ${appointmentForm.patientName}\n` +
+      `Contact: ${appointmentForm.contactNumber}\n` +
+      `Preferred date: ${appointmentForm.appointmentDate}\n` +
+      `Preferred time: ${appointmentForm.preferredTime}\n` +
+      `Notes: ${appointmentForm.notes || '—'}`;
+    const link = whatsappLink(text);
+
+    if (link) {
+      window.open(link, '_blank', 'noopener');
       setAppointmentForm({
         patientName: '',
         contactNumber: '',
@@ -172,12 +184,12 @@ const Doctors = () => {
         notes: ''
       });
       setShowModal(false);
-      alert(`Appointment booked successfully with ${selectedDoctor.name}`);
-    } catch (error) {
-      console.error('Booking error:', error);
-      setBookingStatus({ loading: false, error: 'Failed to book appointment. Please try again.' });
-    } finally {
-      setBookingStatus(prev => ({ ...prev, loading: false }));
+      setBookingStatus({ loading: false, error: null });
+    } else {
+      setBookingStatus({
+        loading: false,
+        error: 'Clinic WhatsApp is not configured yet — your details were validated locally but nothing was sent.'
+      });
     }
   };
 
@@ -200,7 +212,7 @@ const Doctors = () => {
         <div className="container">
           <div className="logo d-flex align-items-center">
             <img 
-              src="/img/logo1.png" 
+              src="/img/logo1.webp" 
               alt="LifeLinkHealthHub Logo" 
               className="heart-img me-2" 
               loading="lazy" 
@@ -230,8 +242,11 @@ const Doctors = () => {
           <div className="row mb-4">
             <div className="col-md-12">
               <h2 className="text-center mb-3">Find a Doctor</h2>
-              <p className="text-center text-muted mb-4">
+              <p className="text-center text-muted mb-2">
                 Browse our list of qualified healthcare professionals or use the filters to find specific specialists
+              </p>
+              <p className="text-center mb-4">
+                <span className="badge bg-secondary">Sample profiles shown for preview</span>
               </p>
             </div>
           </div>
@@ -519,7 +534,7 @@ const Doctors = () => {
             <div className="col-md-4 mb-4 mb-md-0">
               <div className="d-flex align-items-center mb-3">
                 <img 
-                  src="/img/logo1.png" 
+                  src="/img/logo1.webp" 
                   alt="LifeLinkHealthHub Logo" 
                   className="footer-logo me-2"
                   width="40"

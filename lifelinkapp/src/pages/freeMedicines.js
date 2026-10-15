@@ -22,22 +22,10 @@ const FreeMedicines = () => {
     { name: 'Albuterol Inhaler', dosage: '90mcg/actuation', quantity: 30, expiration: '10/2023' },
   ]);
 
-  // External links (replace with your actual URLs)
+  // External links. Social/app-store links are intentionally omitted until the
+  // organization owns real accounts — no placeholder links are published.
   const externalLinks = {
-    applyForm: 'https://forms.example.com/medicine-application',
-    donate: 'https://donate.example.com/lifelinkhealthhub',
-    contact: 'https://lifelinkhealthhub.com/contact',
-    liveChat: 'https://support.example.com/lifelinkhealthhub',
-    privacyPolicy: 'https://lifelinkhealthhub.com/privacy',
-    termsOfService: 'https://lifelinkhealthhub.com/terms',
-    sitemap: 'https://lifelinkhealthhub.com/sitemap',
-    facebook: 'https://facebook.com/lifelinkhealthhub',
-    twitter: 'https://twitter.com/lifelinkhealthhub',
-    instagram: 'https://instagram.com/lifelinkhealthhub',
-    linkedin: 'https://linkedin.com/company/lifelinkhealthhub',
-    googlePlay: 'https://play.google.com/store/apps/details?id=com.lifelinkhealthhub',
-    appStore: 'https://apps.apple.com/us/app/lifelinkhealthhub/id123456789',
-    medicineInfo: 'https://www.who.int/medicines/en/',
+    medicineInfo: 'https://www.who.int/health-topics/medicines',
     partnerPrograms: 'https://www.healthpartners.org/programs',
     prescriptionHelp: 'https://www.rxassist.org/'
   };
@@ -76,7 +64,7 @@ const FreeMedicines = () => {
       <header className="header sticky-top">
         <div className="container">
           <div className="logo d-flex align-items-center">
-            <img src="/img/logo1.png" alt="LifeLinkHealthHub Logo" className="heart-img me-2" loading="lazy" />
+            <img src="/img/logo1.webp" alt="LifeLinkHealthHub Logo" className="heart-img me-2" loading="lazy" width="604" height="706" />
             <Link to="/" className="navbar-brand">
               <i className="fas fa-heartbeat me-2"></i>LifeLinkHealthHub
             </Link>
@@ -100,13 +88,13 @@ const FreeMedicines = () => {
       </header>
 
       {/* Page Banner */}
-      <section className="page-banner" style={{ background: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/medi.jpg') no-repeat center center/cover" }}>
+      <section className="page-banner" style={{ background: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/medi.webp') no-repeat center center/cover" }}>
         <div className="container">
           <div className="banner-content">
             <h1>Free Medicines Program</h1>
             <p>Access to essential medications for those in need</p>
             <div className="cta-buttons">
-              <a href={externalLinks.applyForm} className="btn btn-primary me-2" target="_blank" rel="noopener noreferrer">Apply Now</a>
+              <Link to="/contact" className="btn btn-primary me-2">Apply Now</Link>
               <a href="#medicines" className="btn btn-outline-light">View Available Medicines</a>
             </div>
           </div>
@@ -216,7 +204,7 @@ const FreeMedicines = () => {
                         </div>
                       </div>
                       <div className="text-center mt-4">
-                        <a href={externalLinks.applyForm} className="btn btn-primary" target="_blank" rel="noopener noreferrer">Start Your Application</a>
+                        <Link to="/contact" className="btn btn-primary">Start Your Application</Link>
                       </div>
                     </div>
                   )}
@@ -254,7 +242,7 @@ const FreeMedicines = () => {
                       <button className="btn btn-outline-primary me-2">$50</button>
                       <button className="btn btn-outline-primary">$100</button>
                     </div>
-                    <a href={externalLinks.donate} className="btn btn-success w-100" target="_blank" rel="noopener noreferrer">Donate Now</a>
+                    <p className="text-muted small mb-0">Online donations are not set up yet — contact us to contribute medicines directly.</p>
                   </div>
                 </div>
 
@@ -263,13 +251,13 @@ const FreeMedicines = () => {
                     <h3 className="card-title">Need Help?</h3>
                     <p className="card-text">Our team is here to assist you with the application process.</p>
                     <ul className="contact-info list-unstyled">
-                      <li><i className="fas fa-phone me-2"></i> (800) 555-HELP</li>
+                      <li><i className="fas fa-phone me-2"></i> Abbottabad, Pakistan</li>
                       <li><i className="fas fa-envelope me-2"></i> medicines@lifelinkhealthhub.com</li>
                       <li><i className="fas fa-clock me-2"></i> Mon-Fri: 9AM-5PM</li>
                     </ul>
-                    <a href={externalLinks.liveChat} className="btn btn-outline-primary w-100 mt-2" target="_blank" rel="noopener noreferrer">
-                      <i className="fas fa-comment-dots me-2"></i>Live Chat
-                    </a>
+                    <Link to="/contact" className="btn btn-outline-primary w-100 mt-2">
+                      <i className="fas fa-envelope me-2"></i>Message Us
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -551,8 +539,8 @@ const FreeMedicines = () => {
           <h2 className="mb-4">Need Help Getting Your Medications?</h2>
           <p className="lead mb-4">Our team is ready to assist you with the application process and answer any questions you may have.</p>
           <div className="d-flex justify-content-center gap-3">
-            <a href={externalLinks.contact} className="btn btn-light btn-lg" target="_blank" rel="noopener noreferrer">Contact Us</a>
-            <a href={externalLinks.applyForm} className="btn btn-outline-light btn-lg" target="_blank" rel="noopener noreferrer">Apply Now</a>
+            <Link to="/contact" className="btn btn-light btn-lg">Contact Us</Link>
+            <Link to="/contact" className="btn btn-outline-light btn-lg">Apply Now</Link>
           </div>
         </div>
       </section>
@@ -564,15 +552,11 @@ const FreeMedicines = () => {
             <div className="col-lg-4 mb-4">
               <div className="footer-widget">
                 <div className="d-flex align-items-center mb-3">
-                  <img src="img/logo1.png" alt="LifeLinkHealthHub Logo" className="footer-logo me-2" />
+                  <img src="/img/logo1.webp" alt="LifeLinkHealthHub Logo" className="footer-logo me-2" width="604" height="706" />
                   <h4>LifeLinkHealthHub</h4>
                 </div>
                 <p className="mb-4">Committed to providing quality healthcare services and medications to our community regardless of financial status.</p>
                 <div className="social-links">
-                  <a href={externalLinks.facebook} className="text-white me-3" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
-                  <a href={externalLinks.twitter} className="text-white me-3" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
-                  <a href={externalLinks.instagram} className="text-white me-3" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
-                  <a href={externalLinks.linkedin} className="text-white" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></a>
                 </div>
               </div>
             </div>
@@ -602,21 +586,6 @@ const FreeMedicines = () => {
             <div className="col-lg-3 mb-4">
               <div className="footer-widget">
                 <h5 className="mb-3">Newsletter</h5>
-                <p>Subscribe to our newsletter for updates on medicine availability and health tips.</p>
-                <form className="mb-3">
-                  <div className="input-group">
-                    <input type="email" className="form-control" placeholder="Your email" />
-                    <button className="btn btn-primary" type="submit">Subscribe</button>
-                  </div>
-                </form>
-                <div className="app-badges">
-                  <a href={externalLinks.googlePlay} target="_blank" rel="noopener noreferrer" className="me-2">
-                    <img src="img/google-play-badge.png" alt="Google Play" height="40" />
-                  </a>
-                  <a href={externalLinks.appStore} target="_blank" rel="noopener noreferrer">
-                    <img src="img/app-store-badge.png" alt="App Store" height="40" />
-                  </a>
-                </div>
               </div>
             </div>
           </div>
@@ -627,11 +596,8 @@ const FreeMedicines = () => {
             </div>
             <div className="col-md-6 text-center text-md-end">
               <ul className="list-inline mb-0">
-                <li className="list-inline-item"><a href={externalLinks.privacyPolicy} className="text-white" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
                 <li className="list-inline-item mx-2">•</li>
-                <li className="list-inline-item"><a href={externalLinks.termsOfService} className="text-white" target="_blank" rel="noopener noreferrer">Terms of Service</a></li>
                 <li className="list-inline-item mx-2">•</li>
-                <li className="list-inline-item"><a href={externalLinks.sitemap} className="text-white" target="_blank" rel="noopener noreferrer">Sitemap</a></li>
               </ul>
             </div>
           </div>

@@ -145,7 +145,7 @@ const SymptomsChecker = () => {
       <header className="header">
         <div className="container">
           <div className="logo d-flex align-items-center">
-            <img src="/img/logo1.png" alt="LifeLinkHealthHub Logo" className="heart-img me-2" loading="lazy" />
+            <img src="/img/logo1.webp" alt="LifeLinkHealthHub Logo" className="heart-img me-2" loading="lazy" width="604" height="706" />
             <Link to="/" className="navbar-brand">
               <i className="fas fa-heartbeat me-2"></i>LifeLinkHealthHub
             </Link>
@@ -336,7 +336,7 @@ const SymptomsChecker = () => {
           <div className="row">
             <div className="col-md-4">
               <div className="footer-widget">
-                <img src="/img/logo1.png" alt="LifeLinkHealthHub Logo" className="footer-logo" />
+                <img src="/img/logo1.webp" alt="LifeLinkHealthHub Logo" className="footer-logo" width="604" height="706" />
                 <p>Committed to providing quality healthcare services to our community.</p>
                 <div className="social-links">
                   <Link to="#"><i className="fab fa-facebook-f"></i></Link>

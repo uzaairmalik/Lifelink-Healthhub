@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-import { applyForBed } from '../services/bedService';
+import { whatsappLink } from '../config';
 
 const ApplyBed = () => {
   const navigate = useNavigate();
@@ -77,47 +77,32 @@ const ApplyBed = () => {
 
   setIsSubmitting(true);
   
-  try {
-    // Ensure the data structure matches backend expectations
-    const submissionData = {
-      fullName: formData.fullName,
-      age: formData.age,
-      contactNumber: formData.contactNumber, // Keep same name as backend
-      address: formData.address,
-      symptoms: formData.symptoms,
-      urgencyLevel: formData.urgencyLevel,
-      medicalHistory: formData.medicalHistory,
-      user: user?.id || null
-    };
+  // No backend is deployed for this site, so a validated application is handed
+  // to WhatsApp when a clinic number is configured. When it isn't, we say so
+  // honestly instead of faking a "submitted" confirmation.
+  setIsSubmitting(true);
 
-    const response = await applyForBed(submissionData);
+  const text =
+    `New bed application — LifeLink HealthHub website\n` +
+    `Name: ${formData.fullName}\n` +
+    `Age: ${formData.age}\n` +
+    `Contact: ${formData.contactNumber}\n` +
+    `Address: ${formData.address}\n` +
+    `Symptoms: ${formData.symptoms}\n` +
+    `Urgency: ${formData.urgencyLevel}\n` +
+    `Medical history: ${formData.medicalHistory || '—'}`;
+  const link = whatsappLink(text);
 
-    if (!response.success) {
-      throw new Error(response.error || 'Submission failed');
-    }
-
+  if (link) {
+    window.open(link, '_blank', 'noopener');
     setSuccess(true);
-    setTimeout(() => navigate('/', { 
-      state: { 
-        alert: {
-          type: 'success',
-          message: 'Application submitted successfully!'
-        } 
-      } 
-    }), 2000);
-  } catch (err) {
-    console.error('Submission error:', err);
-    
-    if (err.response?.data?.errors) {
-      setErrors(err.response.data.errors);
-    } else {
-      setErrors({
-        form: err.message || 'Failed to submit application. Please try again.'
-      });
-    }
-  } finally {
-    setIsSubmitting(false);
+    setTimeout(() => navigate('/'), 2500);
+  } else {
+    setErrors({
+      form: 'Clinic WhatsApp is not configured yet — your details were validated locally but nothing was sent.'
+    });
   }
+  setIsSubmitting(false);
 };
 
   if (success) {
@@ -127,9 +112,9 @@ const ApplyBed = () => {
           <div className="success-icon">
             <i className="fas fa-check-circle"></i>
           </div>
-          <h2 className="text-success mb-3">Application Submitted!</h2>
-          <p className="lead">Your bed request has been received.</p>
-          <p>Our team will review your application and contact you shortly.</p>
+          <h2 className="text-success mb-3">Details Ready to Send</h2>
+          <p className="lead">Your application opened in WhatsApp.</p>
+          <p>Press send in WhatsApp to deliver it to the clinic team — nothing is submitted until you do.</p>
           <button 
             className="btn btn-primary mt-3"
             onClick={() => navigate('/')}

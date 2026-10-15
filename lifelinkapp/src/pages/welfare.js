@@ -9,7 +9,7 @@ const Welfare = () => {
       <header className="header">
         <div className="container">
           <div className="logo d-flex align-items-center">
-            <img src="/img/logo1.png" alt="LifeLinkHealthHub Logo" className="heart-img me-2" loading="lazy" />
+            <img src="/img/logo1.webp" alt="LifeLinkHealthHub Logo" className="heart-img me-2" loading="lazy" width="604" height="706" />
             <Link to="/" className="navbar-brand">
               <i className="fas fa-heartbeat me-2"></i>LifeLinkHealthHub
             </Link>
@@ -348,7 +348,7 @@ const Welfare = () => {
             <div className="col-lg-4 col-md-6 mb-5">
               <div className="d-flex align-items-center mb-3">
                 <img 
-                  src="/img/logo1.png" 
+                  src="/img/logo1.webp" 
                   alt="LifeLinkHealthHub Logo" 
                   className="footer-logo me-2" 
                   loading="lazy" 

@@ -50,5 +50,8 @@
     "customize-cra": "^1.0.0",
     "react-app-rewired": "^2.2.1",
     "react-refresh": "^0.17.0"
+  },
+  "engines": {
+    "node": "18 || 20"
   }
 }

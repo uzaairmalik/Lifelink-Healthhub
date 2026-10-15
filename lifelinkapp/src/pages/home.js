@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { WHATSAPP_NUMBER, whatsappLink, SITE } from '../config';
 import '../css/style.css';
 
 const Home = () => {
@@ -7,7 +8,7 @@ const Home = () => {
 
   const slides = [
     {
-      background: "/img/dr.Usman.jpg",
+      background: "/img/dr-usman.avif",
       title: "Every Life Matters",
       description: "Providing quality healthcare services for you and your family with compassion and excellence.",
       buttons: [
@@ -16,7 +17,7 @@ const Home = () => {
       ]
     },
     {
-      background: "/img/Dr.Ali.jpg",
+      background: "/img/Dr.Ali.webp",
       title: "Advanced Medical Care",
       description: "State-of-the-art facilities with compassionate professionals dedicated to your health.",
       buttons: [
@@ -25,7 +26,7 @@ const Home = () => {
       ]
     },
     {
-      background: "/img/doctors.jpg",
+      background: "/img/doctors.avif",
       title: "24/7 Emergency Services",
       description: "Always here when you need us most with immediate medical attention.",
       buttons: [
@@ -52,7 +53,7 @@ const Home = () => {
       <header className="header">
         <div className="container">
           <div className="logo d-flex align-items-center">
-            <img src="/img/logo1.png" alt="LifeLinkHealthHub Logo" className="heart-img me-2" loading="lazy" />
+            <img src="/img/logo1.webp" alt="LifeLinkHealthHub Logo" className="heart-img me-2" loading="lazy" width="604" height="706" />
             <Link to="/" className="navbar-brand">
               <i className="fas fa-heartbeat me-2"></i>LifeLinkHealthHub
             </Link>
@@ -177,7 +178,7 @@ const Home = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6 mb-4 mb-lg-0">
-              <img src="img/about/1.png" alt="About LifeLinkHealthHub" className="img-fluid about-img" loading="lazy" />
+              <img src="/img/about/1.webp" alt="About LifeLinkHealthHub" className="img-fluid about-img" loading="lazy" width="362" height="240" />
             </div>
             <div className="col-lg-6">
               <h2>Welcome to LifeLinkHealthHub</h2>
@@ -208,7 +209,7 @@ const Home = () => {
       {/* Eye Care */}
       <div className="col-lg-4 col-md-6 mb-4">
         <div className="department-card">
-          <img src="img/eye.jpg" alt="Eye Care" className="img-fluid department-img" loading="lazy" />
+          <img src="/img/eye.webp" alt="Eye Care" className="img-fluid department-img" loading="lazy" width="284" height="177" />
           <div className="department-content">
             <h3>Eye Care</h3>
             <p>Comprehensive eye care services including cataract surgery, LASIK, glaucoma treatment, etc.</p>
@@ -220,7 +221,7 @@ const Home = () => {
       {/* Physical Therapy */}
       <div className="col-lg-4 col-md-6 mb-4">
         <div className="department-card">
-          <img src="img/theorapy.jpg" alt="Physical Therapy" className="img-fluid department-img" loading="lazy" />
+          <img src="/img/theorapy.webp" alt="Physical Therapy" className="img-fluid department-img" loading="lazy" width="257" height="196" />
           <div className="department-content">
             <h3>Physical Therapy</h3>
             <p>Rehabilitation services to restore movement and function after injury or surgery with personalized treatment plans.</p>
@@ -232,7 +233,7 @@ const Home = () => {
       {/* Dental Care */}
       <div className="col-lg-4 col-md-6 mb-4">
         <div className="department-card">
-          <img src="img/dentist.jpg" alt="Dental Care" className="img-fluid department-img" loading="lazy" />
+          <img src="/img/dentist.webp" alt="Dental Care" className="img-fluid department-img" loading="lazy" width="271" height="186" />
           <div className="department-content">
             <h3>Dental Care</h3>
             <p>Complete dental services including cosmetic dentistry, orthodontics, oral surgery, and preventive care.</p>
@@ -244,7 +245,7 @@ const Home = () => {
       {/* Cardiology */}
       <div className="col-lg-4 col-md-6 mb-4">
         <div className="department-card">
-          <img src="img/cardiology.jpg" alt="Cardiology" className="img-fluid department-img" loading="lazy" />
+          <img src="/img/cardiology.webp" alt="Cardiology" className="img-fluid department-img" loading="lazy" width="259" height="194" />
           <div className="department-content">
             <h3>Cardiology</h3>
             <p>Advanced cardiac care including angioplasty, bypass surgery, arrhythmia treatment, and preventive cardiology.</p>
@@ -256,7 +257,7 @@ const Home = () => {
       {/* Neurology */}
       <div className="col-lg-4 col-md-6 mb-4">
         <div className="department-card">
-          <img src="img/neurology.jpg" alt="Neurology" className="img-fluid department-img" loading="lazy" />
+          <img src="/img/neurology.webp" alt="Neurology" className="img-fluid department-img" loading="lazy" width="302" height="167" />
           <div className="department-content">
             <h3>Neurology</h3>
             <p>Specialized care for neurological disorders including stroke, epilepsy, Parkinson's, and multiple sclerosis.</p>
@@ -268,7 +269,7 @@ const Home = () => {
       {/* Pediatrics */}
       <div className="col-lg-4 col-md-6 mb-4">
         <div className="department-card">
-          <img src="img/pediatric.jpg" alt="Pediatrics" className="img-fluid department-img" loading="lazy" />
+          <img src="/img/pediatric.webp" alt="Pediatrics" className="img-fluid department-img" loading="lazy" width="275" height="183" />
           <div className="department-content">
             <h3>Pediatrics</h3>
             <p>Compassionate care for infants, children, and adolescents with specialized pediatric services.</p>
@@ -309,7 +310,7 @@ const Home = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-4 col-md-6 mb-5">
-              <img src="img/logo1.png" alt="LifeLinkHealthHub Logo" className="footer-logo" loading="lazy" />
+              <img src="/img/logo1.webp" alt="LifeLinkHealthHub Logo" className="footer-logo" loading="lazy" width="604" height="706" />
               <div className="footer-about">
                 <p>LifeLinkHealthHub is committed to providing quality healthcare services to our community with compassion and excellence. Our team of dedicated professionals works tirelessly to ensure you receive the best possible care.</p>
                 <div className="social-links">
@@ -351,9 +352,17 @@ const Home = () => {
             <div className="col-lg-4 col-md-6 mb-5">
               <div className="footer-contact">
                 <h5>Contact Us</h5>
-                <p><i className="fas fa-map-marker-alt"></i> 123 Medical Center Drive, Health City, PK 12345</p>
-                <p><i className="fas fa-phone"></i> +92 344 9864285</p>
-                <p><i className="fas fa-envelope"></i> info@lifelinkhealthhub.com</p>
+                <p><i className="fas fa-map-marker-alt"></i> {SITE.city}</p>
+                {WHATSAPP_NUMBER ? (
+                  <p><i className="fab fa-whatsapp"></i>{' '}
+                    <a href={whatsappLink('Hello LifeLink HealthHub, I have a question.')} target="_blank" rel="noopener noreferrer" className="text-white">
+                      Chat on WhatsApp
+                    </a>
+                  </p>
+                ) : (
+                  <p><i className="fab fa-whatsapp"></i> WhatsApp coming soon</p>
+                )}
+                <p><i className="fas fa-envelope"></i> {SITE.email}</p>
                 <p><i className="fas fa-clock"></i> Open 24/7 for emergency services</p>
               </div>
             </div>

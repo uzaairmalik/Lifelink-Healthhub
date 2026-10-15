@@ -9,7 +9,7 @@ const FirstAid = () => {
         <header className="header">
         <div className="container">
           <div className="logo d-flex align-items-center">
-            <img src="/img/logo1.png" alt="LifeLinkHealthHub Logo" className="heart-img me-2" loading="lazy" />
+            <img src="/img/logo1.webp" alt="LifeLinkHealthHub Logo" className="heart-img me-2" loading="lazy" width="604" height="706" />
             <Link to="/" className="navbar-brand">
               <i className="fas fa-heartbeat me-2"></i>LifeLinkHealthHub
             </Link>
@@ -189,7 +189,7 @@ const FirstAid = () => {
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body text-center">
-              <img src="/img/pressure-points.jpg" alt="Bleeding control pressure points" className="img-fluid rounded" />
+              <img src="/img/first-aid.webp" alt="First aid illustration" className="img-fluid rounded" loading="lazy" width="800" height="533" />
               <p className="mt-3">Apply pressure to these points to help control severe bleeding when direct pressure isn't enough.</p>
             </div>
             <div className="modal-footer">
@@ -210,7 +210,7 @@ const FirstAid = () => {
             <div className="modal-body">
               <div className="row">
                 <div className="col-md-6">
-                  <img src="/img/child-choking.jpg" alt="Child choking response" className="img-fluid rounded mb-3" />
+                  <img src="/img/first-aid.webp" alt="Child choking response illustration" className="img-fluid rounded mb-3" loading="lazy" width="800" height="533" />
                 </div>
                 <div className="col-md-6">
                   <h4>For Children (1-8 years):</h4>
@@ -241,7 +241,7 @@ const FirstAid = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-4 col-md-6 mb-5">
-              <img src="/img/logo1.png" alt="LifeLinkHealthHub Logo" className="footer-logo" loading="lazy" />
+              <img src="/img/logo1.webp" alt="LifeLinkHealthHub Logo" className="footer-logo" loading="lazy" width="604" height="706" />
               <div className="footer-about">
                 <p>LifeLinkHealthHub is committed to providing quality healthcare information and emergency guidance to help save lives in critical situations.</p>
                 <div className="social-links">
